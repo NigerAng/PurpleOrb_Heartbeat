@@ -1,16 +1,8 @@
-int alphaVal, alphaDelta;
-
 void setup()
 { 
-  alphaVal = 255; // initial value
-  alphaDelta = 3; // rate of change
-  
   //Sphere
   size(800, 600, P3D);
   smooth();
-
-  //HeartRate
-  //http://www.openprocessing.org/sketch/102506, Peter Hofmann.
   stroke(255);
   strokeWeight(1);
   smooth();
@@ -25,6 +17,9 @@ void draw() {
   rect(0, 0, width, height);
 
   noFill();
+  
+  //HeartRate
+  //http://www.openprocessing.org/sketch/102506, Peter Hofmann.
   beginShape();
   for (float x = 0; x < width; x += 1) {
     vertex(x, height/2+1
@@ -46,16 +41,5 @@ void draw() {
   fill(50, 20, 80);
   sphere(150);
   popMatrix();
-  
-  //text
-  //https://processing.org/discourse/beta/num_1153511698.html
-  translate(0,0,50);
-  fill(255, 255, 255, alphaVal);
-
-
-  if ((alphaVal == 0) || (alphaVal == 255))
-    alphaDelta = -alphaDelta;
-
-  alphaVal+= alphaDelta;
   
 }
